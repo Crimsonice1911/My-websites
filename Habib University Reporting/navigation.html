@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Habib University Navigation</title>
+<style>
+body {
+    font-family: "Segoe UI", Arial;
+    background: #f4f3f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.nav-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    text-align: center;
+    width: 320px;
+}
+button {
+    background: #4C216D;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 14px;
+}
+button:hover {
+    background: #6f42c1;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    display: none;
+}
+#errorMsg {
+    color: red;
+    display: none;
+    margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+<div class="nav-box">
+    <h3>Welcome!</h3>
+
+    <button onclick="showSearch('student')">Student Profile</button>
+    <button onclick="showSearch('faculty')">Faculty Profile</button>
+    <button onclick="alert('Aggregate Reports coming soon!')">Aggregate Reports</button>
+
+    <!-- Search bar -->
+    <input type="text" id="idInput" placeholder="Enter ID">
+    <button id="searchBtn" onclick="searchProfile()" style="display:none;">Search</button>
+    <p id="errorMsg">Profile not found</p>
+</div>
+
+<script>
+let currentMode = "";
+
+function showSearch(mode) {
+    currentMode = mode;
+    document.getElementById("idInput").style.display = "block";
+    document.getElementById("searchBtn").style.display = "inline-block";
+    document.getElementById("errorMsg").style.display = "none";
+    document.getElementById("idInput").value = "";
+}
+
+function searchProfile() {
+    const id = document.getElementById("idInput").value;
+    const error = document.getElementById("errorMsg");
+
+    if (currentMode === "student" && id === "06886") {
+        window.location.href = "student-profile.html";
+    }
+    else if (currentMode === "faculty" && id === "00025") {
+        window.location.href = "faculty-profile.html";
+    }
+    else {
+        error.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
