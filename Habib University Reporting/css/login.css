@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     background: url("../pictures/background.svg") no-repeat center center fixed;
@@ -15,7 +19,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     text-align: center;
-    width: 300px;
+    width: 350px;
 }
 
 .login-box img {
