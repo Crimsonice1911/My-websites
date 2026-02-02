@@ -1,6 +1,6 @@
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: url('background.svg') no-repeat center center fixed;
+    background: url("../pictures/background.svg") no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
